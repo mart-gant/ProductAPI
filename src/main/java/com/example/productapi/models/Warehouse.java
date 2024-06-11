@@ -10,6 +10,9 @@ public class Warehouse {
 
     private Long id;
 
+    public Warehouse(long l, String testWarehouse, String testAddress) {
+    }
+
     public Long getId() {
         return id;
     }
