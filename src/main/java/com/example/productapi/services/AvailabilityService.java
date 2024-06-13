@@ -48,6 +48,4 @@ public class AvailabilityService {
         availabilityRepository.deleteById(id);
     }
 
-    public Availability saveAvailability(Availability availability) {
-    }
 }
