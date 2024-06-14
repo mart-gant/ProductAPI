@@ -1,7 +1,6 @@
 package com.example.productapi.controllers;
 
 import com.example.productapi.models.Availability;
-import com.example.productapi.models.Product;
 import com.example.productapi.services.AvailabilityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
