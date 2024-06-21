@@ -1,15 +1,22 @@
 package com.example.productapi.models;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "warehouses")
 public class Warehouse {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long id;
 
+    @Column(nullable = false)
+    private String name;
+
+    @Column(nullable = false)
+    private String address;
+
+    // Gettery i settery
     public Long getId() {
         return id;
     }
@@ -17,8 +24,6 @@ public class Warehouse {
     public void setId(Long id) {
         this.id = id;
     }
-    private String name;
-
 
     public String getName() {
         return name;
@@ -27,7 +32,6 @@ public class Warehouse {
     public void setName(String name) {
         this.name = name;
     }
-    private String address;
 
     public String getAddress() {
         return address;

@@ -1,35 +1,48 @@
 package com.example.productapi.models;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "availabilities")
 public class Availability {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    @ManyToOne
-    private Product product;
+    @Column(nullable = false)
+    private Long productId;
 
-    public Product getProduct() {
-        return product;
+    @Column(nullable = false)
+    private Long warehouseId;
+
+    @Column(nullable = false)
+    private int quantity;
+
+    // Gettery i settery
+    public Long getId() {
+        return id;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-    @ManyToOne
-    private Warehouse warehouse;
-
-    public Warehouse getWarehouse() {
-        return warehouse;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setWarehouse(Warehouse warehouse) {
-        this.warehouse = warehouse;
+    public Long getProductId() {
+        return productId;
     }
-    private  int quantity;
+
+    public void setProductId(Long productId) {
+        this.productId = productId;
+    }
+
+    public Long getWarehouseId() {
+        return warehouseId;
+    }
+
+    public void setWarehouseId(Long warehouseId) {
+        this.warehouseId = warehouseId;
+    }
 
     public int getQuantity() {
         return quantity;
